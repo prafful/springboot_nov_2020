@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.entity.FriendEntity;
 import com.example.demo.pojo.Friend;
 import com.example.demo.service.FriendService;
 
@@ -35,12 +36,12 @@ public class FriendRestController {
 	
 	
 	@GetMapping("/friends/all")
-	public List<Friend> getAllFriends() {
+	public List<FriendEntity> getAllFriends() {
 		return friendService.getAllFriends();
 	}
 	
 	@PostMapping("/friends/add")
-	public List<Friend> addFriend(@RequestBody Friend f){
+	public List<FriendEntity> addFriend(@RequestBody Friend f){
 		return friendService.addFriend(f);	
 	}
 	

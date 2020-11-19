@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.FriendDao;
+import com.example.demo.entity.FriendEntity;
 import com.example.demo.pojo.Friend;
 
 @Service
@@ -14,12 +15,12 @@ public class FriendService {
 	@Autowired
 	private FriendDao friendDao;
 
-	public List<Friend> getAllFriends() {
+	public List<FriendEntity> getAllFriends() {
 		// TODO Auto-generated method stub
 		return friendDao.getAllFriends();
 	}
 
-	public List<Friend> addFriend(Friend f) {
+	public List<FriendEntity> addFriend(Friend f) {
 		// TODO Auto-generated method stub
 		return friendDao.addFriend(f);
 	}
