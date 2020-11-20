@@ -1,5 +1,6 @@
 package com.example.demo.restcontroller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,15 +47,19 @@ public class FriendRestController {
 	}
 	
 	@GetMapping("/friends/get/{id}")
-	public Friend getFriendById(@PathVariable int id) {
+	public FriendEntity getFriendById(@PathVariable int id) {
 			return friendService.getFriendById(id);
 	}
 	
 	@PutMapping("/friends/update/{id}")
-	public List<Friend> updateFriendById(@PathVariable int id, @RequestBody Friend f ){
+	public List<FriendEntity> updateFriendById(@PathVariable int id, @RequestBody Friend f ){
 		return friendService.updateFriendById(id, f);
 	}
 	
+	@GetMapping("/friends/location/{location}")
+	public List<FriendEntity> findByLocation(@PathVariable String location){
+		return friendService.findByLocation(location);
+	}
 	
 	
 	

@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +26,19 @@ public class FriendService {
 		return friendDao.addFriend(f);
 	}
 
-	public Friend getFriendById(int id) {
+	public FriendEntity getFriendById(int id) {
 		// TODO Auto-generated method stub
 		return friendDao.getFriendById(id);
 	}
 
-	public List<Friend> updateFriendById(int id, Friend f) {
+	public List<FriendEntity> updateFriendById(int id, Friend f) {
 		// TODO Auto-generated method stub
 		return friendDao.updateFriendById(id, f);
+	}
+
+	public List<FriendEntity> findByLocation(String location) {
+		// TODO Auto-generated method stub
+		return friendDao.findByLocation(location);
 	}
 	
 }
