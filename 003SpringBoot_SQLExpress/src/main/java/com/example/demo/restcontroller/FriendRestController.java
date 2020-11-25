@@ -61,6 +61,12 @@ public class FriendRestController {
 		return friendService.findByLocation(location);
 	}
 	
+	@GetMapping("/friends/name/{name}")
+	public List<FriendEntity> findByName(@PathVariable String name){
+		return friendService.findByName(name);
+	}
+	
+	
 	
 	
 }

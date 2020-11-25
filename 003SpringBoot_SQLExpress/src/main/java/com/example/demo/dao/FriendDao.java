@@ -67,4 +67,9 @@ public class FriendDao {
 		return friendRepository.findByLocation(location);
 	}
 
+	public List<FriendEntity> findByName(String name) {
+		// TODO Auto-generated method stub
+		return friendRepository.findByName(name);
+	}
+
 }

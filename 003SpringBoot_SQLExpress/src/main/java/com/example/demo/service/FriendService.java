@@ -40,5 +40,10 @@ public class FriendService {
 		// TODO Auto-generated method stub
 		return friendDao.findByLocation(location);
 	}
+
+	public List<FriendEntity> findByName(String name) {
+		// TODO Auto-generated method stub
+		return friendDao.findByName(name);
+	}
 	
 }
