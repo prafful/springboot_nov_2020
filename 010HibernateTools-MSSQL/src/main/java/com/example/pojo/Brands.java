@@ -1,5 +1,5 @@
 package com.example.pojo;
-// Generated 25 Nov, 2020 6:51:44 PM by Hibernate Tools 5.2.12.Final
+// Generated 25 Nov, 2020 7:31:27 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,6 +11,7 @@ public class Brands implements java.io.Serializable {
 
 	private int brandId;
 	private String brandName;
+	private String brandLocation;
 	private Set productses = new HashSet(0);
 
 	public Brands() {
@@ -21,9 +22,10 @@ public class Brands implements java.io.Serializable {
 		this.brandName = brandName;
 	}
 
-	public Brands(int brandId, String brandName, Set productses) {
+	public Brands(int brandId, String brandName, String brandLocation, Set productses) {
 		this.brandId = brandId;
 		this.brandName = brandName;
+		this.brandLocation = brandLocation;
 		this.productses = productses;
 	}
 
@@ -41,6 +43,14 @@ public class Brands implements java.io.Serializable {
 
 	public void setBrandName(String brandName) {
 		this.brandName = brandName;
+	}
+
+	public String getBrandLocation() {
+		return this.brandLocation;
+	}
+
+	public void setBrandLocation(String brandLocation) {
+		this.brandLocation = brandLocation;
 	}
 
 	public Set getProductses() {

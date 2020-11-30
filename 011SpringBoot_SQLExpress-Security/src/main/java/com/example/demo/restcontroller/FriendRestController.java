@@ -35,14 +35,19 @@ public class FriendRestController {
 	}
 	
 	
-	@GetMapping("/friends/all")
+	@GetMapping("/friends/get/all")
 	public List<FriendEntity> getAllFriends() {
 		return friendService.getAllFriends();
 	}
 	
-	@PostMapping("/friends/add")
-	public List<FriendEntity> addFriend(@RequestBody Friend f){
-		return friendService.addFriend(f);	
+	@GetMapping("/friends/get/location/{location}")
+	public List<FriendEntity> findByLocation(@PathVariable String location){
+		return friendService.findByLocation(location);
+	}
+	
+	@GetMapping("/friends/get/name/{name}")
+	public List<FriendEntity> findByName(@PathVariable String name){
+		return friendService.findByName(name);
 	}
 	
 	@GetMapping("/friends/get/{id}")
@@ -50,20 +55,17 @@ public class FriendRestController {
 			return friendService.getFriendById(id);
 	}
 	
+	@PostMapping("/friends/add")
+	public List<FriendEntity> addFriend(@RequestBody Friend f){
+		return friendService.addFriend(f);	
+	}
+	
 	@PutMapping("/friends/update/{id}")
 	public List<FriendEntity> updateFriendById(@PathVariable int id, @RequestBody Friend f ){
 		return friendService.updateFriendById(id, f);
 	}
 	
-	@GetMapping("/friends/location/{location}")
-	public List<FriendEntity> findByLocation(@PathVariable String location){
-		return friendService.findByLocation(location);
-	}
 	
-	@GetMapping("/friends/name/{name}")
-	public List<FriendEntity> findByName(@PathVariable String name){
-		return friendService.findByName(name);
-	}
 	
 	
 	

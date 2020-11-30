@@ -1,5 +1,5 @@
 package com.example.entity;
-// Generated 25 Nov, 2020 6:52:26 PM by Hibernate Tools 5.2.12.Final
+// Generated 25 Nov, 2020 7:36:48 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,6 +19,7 @@ public class Brands implements java.io.Serializable {
 
 	private int brandId;
 	private String brandName;
+	private String brandLocation;
 	private Set<Products> productses = new HashSet<Products>(0);
 
 	public Brands() {
@@ -29,9 +30,10 @@ public class Brands implements java.io.Serializable {
 		this.brandName = brandName;
 	}
 
-	public Brands(int brandId, String brandName, Set<Products> productses) {
+	public Brands(int brandId, String brandName, String brandLocation, Set<Products> productses) {
 		this.brandId = brandId;
 		this.brandName = brandName;
+		this.brandLocation = brandLocation;
 		this.productses = productses;
 	}
 
@@ -53,6 +55,15 @@ public class Brands implements java.io.Serializable {
 
 	public void setBrandName(String brandName) {
 		this.brandName = brandName;
+	}
+
+	@Column(name = "brand_location")
+	public String getBrandLocation() {
+		return this.brandLocation;
+	}
+
+	public void setBrandLocation(String brandLocation) {
+		this.brandLocation = brandLocation;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "brands")
